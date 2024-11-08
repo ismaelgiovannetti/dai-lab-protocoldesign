@@ -20,6 +20,7 @@ This protocol defines the interactions between a client sending calculation requ
  ## Errors
 For robust communication, the server may return error messages in case of incorrect commands.
 - `ERROR INVALID_OPERATION` : for unrecognized operations
+- `ERROR NON_NUMERIC_VALUES` : for non numeric values
 
 As shown previously, division by zero are handled as an undefined result and not as an error.
 
@@ -27,7 +28,7 @@ As shown previously, division by zero are handled as an undefined result and not
 1. **Connection** : The client initiates a TCP connection to the server.
 2. **Sending commands** : The client sends a command.
 3. **Server response** : The server receives, processes, and responds to the client.
-4. **Termination** : Once all commands are sent, the client closes the connection.
+4. **Termination** : Once all commands are sent, the client closes the connection (no QUIT command).
 
 
 
