@@ -8,7 +8,7 @@ import java.net.ServerSocket;
 import java.net.Socket;
 
 public class Server {
-    final int SERVER_PORT = 1234;
+    final int SERVER_PORT = 58008;
 
     public static void main(String[] args) {
         // Create a new server and run it
@@ -48,28 +48,27 @@ public class Server {
                             double num2 = Double.parseDouble(parts[2]);
 
                             switch (operation.toUpperCase()) {
-                                case "ADD":
+                                case "ADD" -> {
                                     result = num1 + num2;
                                     out.println("RESULT " + result);
-                                    break;
-                                case "MULT":
+                                }
+                                case "MULT" -> {
                                     result = num1 * num2;
                                     out.println("RESULT " + result);
-                                    break;
-                                case "SUB":
+                                }
+                                case "SUB" -> {
                                     result = num1 - num2;
                                     out.println("RESULT " + result);
-                                    break;
-                                case "DIV":
+                                }
+                                case "DIV" -> {
                                     if (num2 == 0) {
                                         out.println("RESULT undefined");
                                     } else {
                                         result = num1 / num2;
                                         out.println("RESULT " + result);
                                     }
-                                    break;
-                                default:
-                                    out.println("ERROR INVALID_OPERATION");
+                                }
+                                default -> out.println("ERROR INVALID_OPERATION");
                             }
                         } catch (NumberFormatException e) {
                             out.println("ERROR NON_NUMERIC_VALUES");

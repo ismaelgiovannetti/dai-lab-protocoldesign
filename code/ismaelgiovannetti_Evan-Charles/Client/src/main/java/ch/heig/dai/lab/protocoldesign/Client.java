@@ -10,7 +10,7 @@ import java.util.Scanner;
 
 public class Client {
     final String SERVER_ADDRESS = "localhost";
-    final int SERVER_PORT = 1234;
+    final int SERVER_PORT = 58008;
 
     public static void main(String[] args) {
         // Create a new client and run it
